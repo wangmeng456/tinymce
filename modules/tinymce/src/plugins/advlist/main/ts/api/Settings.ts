@@ -5,6 +5,8 @@
  * For commercial licenses see https://www.tiny.cloud/
  */
 
+import Editor from 'tinymce/core/api/Editor';
+
 const getNumberStyles = function (editor) {
   const styles = editor.getParam('advlist_number_styles', 'default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman');
   return styles ? styles.split(/[ ,]/) : [];
@@ -15,7 +17,10 @@ const getBulletStyles = function (editor) {
   return styles ? styles.split(/[ ,]/) : [];
 };
 
+const getPlugins = (editor: Editor) => editor.getParam('plugins', '');
+
 export {
   getNumberStyles,
-  getBulletStyles
+  getBulletStyles,
+  getPlugins
 };

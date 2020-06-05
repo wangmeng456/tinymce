@@ -64,9 +64,11 @@ const tab = (editor: Editor): Types.Dialog.TabApi => {
 
   const getPluginKeys = (editor) => {
     const keys = Obj.keys(editor.plugins);
-    return editor.settings.forced_plugins === undefined ?
+    const forced_plugins = Settings.getForcedPlugins(editor);
+
+    return forced_plugins === undefined ?
       keys :
-      Arr.filter(keys, (k) => !Arr.contains(editor.settings.forced_plugins, k));
+      Arr.filter(keys, (k) => !Arr.contains(forced_plugins, k));
   };
 
   const pluginLister = (editor) => {

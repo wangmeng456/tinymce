@@ -28,7 +28,7 @@ const handleSetContent = function (editor: Editor, headState, footState, evt) {
     return;
   }
 
-  content = Protect.protectHtml(editor.settings.protect, evt.content);
+  content = Protect.protectHtml(Settings.getProtect(editor), evt.content);
 
   // Ignore raw updated if we already have a head, this will fix issues with undo/redo keeping the head/foot separate
   if (evt.format === 'raw' && headState.get()) {

@@ -4,6 +4,7 @@
  * For LGPL see License.txt in the project root for license information.
  * For commercial licenses see https://www.tiny.cloud/
  */
+import Editor from 'tinymce/core/api/Editor';
 
 const shouldHideInSourceView = function (editor) {
   return editor.getParam('fullpage_hide_in_source_view');
@@ -37,6 +38,8 @@ const getDefaultDocType = function (editor) {
   return editor.getParam('fullpage_default_doctype', '<!DOCTYPE html>');
 };
 
+const getProtect = (editor: Editor) => editor.getParam('protect');
+
 export {
   shouldHideInSourceView,
   getDefaultXmlPi,
@@ -45,5 +48,6 @@ export {
   getDefaultFontSize,
   getDefaultTextColor,
   getDefaultTitle,
-  getDefaultDocType
+  getDefaultDocType,
+  getProtect
 };

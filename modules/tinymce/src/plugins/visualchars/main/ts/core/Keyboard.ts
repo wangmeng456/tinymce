@@ -7,13 +7,14 @@
 
 import Delay from 'tinymce/core/api/util/Delay';
 import * as VisualChars from './VisualChars';
+import * as Settings from '../api/Settings';
 
 const setup = function (editor, toggleState) {
   const debouncedToggle = Delay.debounce(function () {
     VisualChars.toggle(editor);
   }, 300);
 
-  if (editor.settings.forced_root_block !== false) {
+  if (Settings.hasForcedRootBlock(editor)) {
     editor.on('keydown', function (e) {
       if (toggleState.get() === true) {
         e.keyCode === 13 ? VisualChars.toggle(editor) : debouncedToggle();

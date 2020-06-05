@@ -5,6 +5,8 @@
  * For commercial licenses see https://www.tiny.cloud/
  */
 
+import Editor from 'tinymce/core/api/Editor';
+
 const shouldMergeClasses = function (editor) {
   return editor.getParam('importcss_merge_classes');
 };
@@ -32,6 +34,14 @@ const shouldAppend = function (editor) {
 const getFileFilter = function (editor) {
   return editor.getParam('importcss_file_filter');
 };
+
+
+const getSkin = (editor: Editor) => {
+  const skin = editor.getParam('skin');
+  return skin !== false ? skin || 'oxide' : false;
+};
+
+const getSkinUrl = (editor: Editor) => editor.getParam('skin_url');
 
 export {
   shouldMergeClasses,

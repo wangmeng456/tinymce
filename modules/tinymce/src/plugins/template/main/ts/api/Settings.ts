@@ -35,6 +35,21 @@ const getCdateFormat = (editor: Editor) => editor.getParam('template_cdate_forma
 
 const getMdateFormat = (editor: Editor) => editor.getParam('template_mdate_format', editor.translate('%Y-%m-%d'));
 
+const getBodyClassFromHash = (editor: Editor) => {
+  const bodyClass = editor.getParam('body_class', '', 'hash');
+  return bodyClass[editor.id] || '';
+};
+
+const getBodyClass = (editor: Editor) => {
+  const bodyClass = editor.getParam('body_class', '', 'string');
+
+  if (bodyClass.indexOf('=') === -1) {
+    return bodyClass;
+  }
+
+  return getBodyClassFromHash(editor);
+};
+
 export {
   getCreationDateClasses,
   getModificationDateClasses,
@@ -44,4 +59,5 @@ export {
   getTemplates,
   getCdateFormat,
   getMdateFormat,
+  getBodyClass,
 };

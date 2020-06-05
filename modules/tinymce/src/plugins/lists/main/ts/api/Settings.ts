@@ -24,8 +24,11 @@ const getForcedRootBlock = (editor: Editor): string => {
 
 const getForcedRootBlockAttrs = (editor: Editor): Record<string, string> => editor.getParam('forced_root_block_attrs', {});
 
+const getPlugins = (editor: Editor): string => editor.getParam('plugins', '', 'string');
+
 export {
   shouldIndentOnTab,
   getForcedRootBlock,
-  getForcedRootBlockAttrs
+  getForcedRootBlockAttrs,
+  getPlugins,
 };

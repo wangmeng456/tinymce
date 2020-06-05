@@ -13,7 +13,7 @@ import * as Events from '../api/Events';
 import * as Settings from '../api/Settings';
 
 const isEmpty = (editor: Editor, html?: string) => {
-  const forcedRootBlockName = editor.settings.forced_root_block;
+  const forcedRootBlockName = Settings.getForcedRootBlock(editor);
 
   html = Tools.trim(typeof html === 'undefined' ? editor.getBody().innerHTML : html);
 

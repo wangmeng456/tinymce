@@ -20,9 +20,43 @@ const getContentStyle = function (editor: Editor) {
 
 const shouldUseContentCssCors = (editor: Editor): boolean => editor.getParam('content_css_cors', false, 'boolean');
 
+
+const getBodyClassByHash = (editor: Editor): string => {
+  const bodyClass = editor.getParam('body_class', '', 'string');
+
+  return bodyClass[editor.id] || '';
+};
+
+const getBodyClass = (editor: Editor): string => {
+  const bodyClass = editor.getParam('body_class', '', 'string');
+
+  if (bodyClass.indexOf('=') === -1) {
+    return bodyClass;
+  }
+
+  return getBodyClassByHash(editor);
+};
+
+const getBodyIdByHash = (editor: Editor): string => {
+  const bodyId = editor.getParam('body_id', '', 'hash');
+  return bodyId[editor.id] || bodyId;
+};
+
+const getBodyId = (editor: Editor): string => {
+  const bodyId = editor.getParam('body_id', 'tinymce', 'string');
+
+  if (bodyId.indexOf('=') === -1) {
+    return bodyId;
+  }
+
+  return getBodyIdByHash(editor);
+};
+
 export {
   getPreviewDialogWidth,
   getPreviewDialogHeight,
   getContentStyle,
-  shouldUseContentCssCors
+  shouldUseContentCssCors,
+  getBodyClass,
+  getBodyId,
 };

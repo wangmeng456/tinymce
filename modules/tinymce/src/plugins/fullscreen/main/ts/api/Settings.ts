@@ -5,15 +5,10 @@
  * For commercial licenses see https://www.tiny.cloud/
  */
 
-const getCharMap = function (editor) {
-  return editor.getParam('charmap');
-};
+import Editor from 'tinymce/core/api/Editor';
 
-const getCharMapAppend = function (editor) {
-  return editor.getParam('charmap_append');
-};
+const getInline = (editor: Editor) => editor.getParam('inline');
 
 export {
-  getCharMap,
-  getCharMapAppend
+  getInline
 };
