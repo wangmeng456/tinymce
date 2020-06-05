@@ -9,11 +9,12 @@ import PluginManager from 'tinymce/core/api/PluginManager';
 import Tools from 'tinymce/core/api/util/Tools';
 import * as Commands from './api/Commands';
 import * as Buttons from './ui/Buttons';
+import Editor from 'tinymce/core/api/Editor';
 import * as Settings from './api/Settings';
 
-export default function () {
-  PluginManager.add('advlist', function (editor) {
-    const hasPlugin = function (editor, plugin) {
+export default () => {
+  PluginManager.add('advlist', (editor: Editor) => {
+    const hasPlugin = (editor: Editor, plugin: string) => {
       return Tools.inArray(Settings.getPlugins(editor).split(/[ ,]/), plugin) !== -1;
     };
 

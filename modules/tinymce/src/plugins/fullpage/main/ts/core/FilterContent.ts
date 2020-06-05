@@ -14,8 +14,8 @@ import * as Protect from './Protect';
 
 const each = Tools.each;
 
-const low = function (s) {
-  return s.replace(/<\/?[A-Z]+/g, function (a) {
+const low = function (s: string) {
+  return s.replace(/<\/?[A-Z]+/g, function (a: string) {
     return a.toLowerCase();
   });
 };

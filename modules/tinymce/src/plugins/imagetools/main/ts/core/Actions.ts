@@ -26,7 +26,7 @@ const getFigureImg = (elem) => SelectorFind.child(Element.fromDom(elem), 'img');
 
 const isFigure = (editor: Editor, elem) => editor.dom.is(elem, 'figure');
 
-const getEditableImage = function (editor: Editor, elem) {
+const getEditableImage = (editor: Editor, elem) => {
   const isImage = (imgNode) => editor.dom.is(imgNode, 'img:not([data-mce-object],[data-mce-placeholder])');
   const isEditable = (imgNode) => isImage(imgNode) && (isLocalImage(editor, imgNode) || isCorsImage(editor, imgNode) || Settings.getProxyUrl(editor));
 

@@ -9,14 +9,15 @@ import Tools from 'tinymce/core/api/util/Tools';
 import * as Settings from '../api/Settings';
 import * as DateTimeHelper from './DateTimeHelper';
 import * as Templates from './Templates';
+import Editor from 'tinymce/core/api/Editor';
 
-const setup = function (editor) {
-  editor.on('PreProcess', function (o) {
+const setup = (editor: Editor) => {
+  editor.on('PreProcess', (o) => {
     const dom = editor.dom, dateFormat = Settings.getMdateFormat(editor);
 
-    Tools.each(dom.select('div', o.node), function (e) {
+    Tools.each(dom.select('div', o.node), (e) => {
       if (dom.hasClass(e, 'mceTmpl')) {
-        Tools.each(dom.select('*', e), function (e) {
+        Tools.each(dom.select('*', e), (e) => {
           if (dom.hasClass(e, Settings.getModificationDateClasses(editor).replace(/\s+/g, '|'))) {
             e.innerHTML = DateTimeHelper.getDateTime(editor, dateFormat);
           }

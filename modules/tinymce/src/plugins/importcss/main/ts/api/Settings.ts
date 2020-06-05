@@ -7,34 +7,19 @@
 
 import Editor from 'tinymce/core/api/Editor';
 
-const shouldMergeClasses = function (editor) {
-  return editor.getParam('importcss_merge_classes');
-};
+const shouldMergeClasses = (editor: Editor) => editor.getParam('importcss_merge_classes');
 
-const shouldImportExclusive = function (editor) {
-  return editor.getParam('importcss_exclusive');
-};
+const shouldImportExclusive = (editor: Editor) => editor.getParam('importcss_exclusive');
 
-const getSelectorConverter = function (editor) {
-  return editor.getParam('importcss_selector_converter');
-};
+const getSelectorConverter = (editor: Editor) => editor.getParam('importcss_selector_converter');
 
-const getSelectorFilter = function (editor) {
-  return editor.getParam('importcss_selector_filter');
-};
+const getSelectorFilter = (editor: Editor) => editor.getParam('importcss_selector_filter');
 
-const getCssGroups = function (editor) {
-  return editor.getParam('importcss_groups');
-};
+const getCssGroups = (editor: Editor) => editor.getParam('importcss_groups');
 
-const shouldAppend = function (editor) {
-  return editor.getParam('importcss_append');
-};
+const shouldAppend = (editor: Editor) => editor.getParam('importcss_append');
 
-const getFileFilter = function (editor) {
-  return editor.getParam('importcss_file_filter');
-};
-
+const getFileFilter = (editor: Editor) => editor.getParam('importcss_file_filter');
 
 const getSkin = (editor: Editor) => {
   const skin = editor.getParam('skin');
@@ -50,5 +35,7 @@ export {
   getSelectorFilter,
   getCssGroups,
   shouldAppend,
-  getFileFilter
+  getFileFilter,
+  getSkin,
+  getSkinUrl,
 };

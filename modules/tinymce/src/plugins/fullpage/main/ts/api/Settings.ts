@@ -6,37 +6,21 @@
  */
 import Editor from 'tinymce/core/api/Editor';
 
-const shouldHideInSourceView = function (editor) {
-  return editor.getParam('fullpage_hide_in_source_view');
-};
+const shouldHideInSourceView = (editor: Editor) => editor.getParam('fullpage_hide_in_source_view');
 
-const getDefaultXmlPi = function (editor) {
-  return editor.getParam('fullpage_default_xml_pi');
-};
+const getDefaultXmlPi = (editor: Editor) => editor.getParam('fullpage_default_xml_pi');
 
-const getDefaultEncoding = function (editor) {
-  return editor.getParam('fullpage_default_encoding');
-};
+const getDefaultEncoding = (editor: Editor) => editor.getParam('fullpage_default_encoding');
 
-const getDefaultFontFamily = function (editor) {
-  return editor.getParam('fullpage_default_font_family');
-};
+const getDefaultFontFamily = (editor: Editor) => editor.getParam('fullpage_default_font_family');
 
-const getDefaultFontSize = function (editor) {
-  return editor.getParam('fullpage_default_font_size');
-};
+const getDefaultFontSize = (editor: Editor) => editor.getParam('fullpage_default_font_size');
 
-const getDefaultTextColor = function (editor) {
-  return editor.getParam('fullpage_default_text_color');
-};
+const getDefaultTextColor = (editor: Editor) => editor.getParam('fullpage_default_text_color');
 
-const getDefaultTitle = function (editor) {
-  return editor.getParam('fullpage_default_title');
-};
+const getDefaultTitle = (editor: Editor) => editor.getParam('fullpage_default_title');
 
-const getDefaultDocType = function (editor) {
-  return editor.getParam('fullpage_default_doctype', '<!DOCTYPE html>');
-};
+const getDefaultDocType = (editor: Editor) => editor.getParam('fullpage_default_doctype', '<!DOCTYPE html>');
 
 const getProtect = (editor: Editor) => editor.getParam('protect');
 

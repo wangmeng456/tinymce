@@ -11,9 +11,10 @@ import * as Api from './api/Api';
 import * as Commands from './api/Commands';
 import * as Buttons from './ui/Buttons';
 import * as Settings from './api/Settings';
+import Editor from 'tinymce/core/api/Editor';
 
 export default function () {
-  PluginManager.add('fullscreen', (editor) => {
+  PluginManager.add('fullscreen', (editor: Editor) => {
     const fullscreenState: Cell<any> = Cell(null);
 
     if (Settings.getInline(editor)) {

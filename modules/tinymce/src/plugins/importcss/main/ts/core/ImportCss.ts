@@ -34,6 +34,7 @@ const removeCacheSuffix = function (url: string) {
   return url;
 };
 
+const isSkinContentCss = (editor: Editor, href: string) => {
   const skin = Settings.getSkin(editor);
 
   if (skin) {

@@ -7,29 +7,17 @@
 
 import Editor from 'tinymce/core/api/Editor';
 
-const getCreationDateClasses = function (editor) {
-  return editor.getParam('template_cdate_classes', 'cdate');
-};
+const getCreationDateClasses = (editor: Editor) => editor.getParam('template_cdate_classes', 'cdate');
 
-const getModificationDateClasses = function (editor) {
-  return editor.getParam('template_mdate_classes', 'mdate');
-};
+const getModificationDateClasses = (editor: Editor) => editor.getParam('template_mdate_classes', 'mdate');
 
-const getSelectedContentClasses = function (editor) {
-  return editor.getParam('template_selected_content_classes', 'selcontent');
-};
+const getSelectedContentClasses = (editor: Editor) => editor.getParam('template_selected_content_classes', 'selcontent');
 
-const getPreviewReplaceValues = function (editor) {
-  return editor.getParam('template_preview_replace_values');
-};
+const getPreviewReplaceValues = (editor: Editor) => editor.getParam('template_preview_replace_values');
 
-const getTemplateReplaceValues = function (editor) {
-  return editor.getParam('template_replace_values');
-};
+const getTemplateReplaceValues = (editor: Editor) => editor.getParam('template_replace_values');
 
-const getTemplates = function (editorSettings) {
-  return editorSettings.templates;
-};
+const getTemplates = (editor: Editor) => editor.getParam('templates');
 
 const getCdateFormat = (editor: Editor) => editor.getParam('template_cdate_format', editor.translate('%Y-%m-%d'));
 
