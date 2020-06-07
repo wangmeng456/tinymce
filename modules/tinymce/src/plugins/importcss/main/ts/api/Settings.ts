@@ -37,5 +37,5 @@ export {
   shouldAppend,
   getFileFilter,
   getSkin,
-  getSkinUrl,
+  getSkinUrl
 };

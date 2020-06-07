@@ -80,5 +80,5 @@ export {
   getImagesDataimgFilter,
   getImagesReuseFilename,
   getForcedRootBlock,
-  getForcedRootBlockAttrs,
+  getForcedRootBlockAttrs
 };

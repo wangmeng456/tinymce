@@ -56,5 +56,5 @@ export {
   allowUnsafeLinkTarget,
   useQuickLink,
   getDefaultLinkProtocol,
-  getPlugins,
+  getPlugins
 };

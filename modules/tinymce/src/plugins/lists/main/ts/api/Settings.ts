@@ -28,5 +28,5 @@ export {
   shouldIndentOnTab,
   getForcedRootBlock,
   getForcedRootBlockAttrs,
-  getPlugins,
+  getPlugins
 };

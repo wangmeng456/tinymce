@@ -13,7 +13,7 @@ import Editor from 'tinymce/core/api/Editor';
 import * as Settings from './api/Settings';
 
 export default () => {
-  PluginManager.add('advlist', (editor: Editor) => {
+  PluginManager.add('advlist', (editor) => {
     const hasPlugin = (editor: Editor, plugin: string) => {
       return Tools.inArray(Settings.getPlugins(editor).split(/[ ,]/), plugin) !== -1;
     };

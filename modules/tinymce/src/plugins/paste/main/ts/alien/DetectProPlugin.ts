@@ -11,7 +11,7 @@ import { window } from '@ephox/dom-globals';
 
 const hasProPlugin = function (editor: Editor) {
   // draw back if power version is requested and registered
-  if (/(^|[ ,])powerpaste([, ]|$)/.test(editor.settings.plugins) && PluginManager.get('powerpaste')) { // editor.settings.plugins not changed to editor.getProps due to being alien.
+  if (/(^|[ ,])powerpaste([, ]|$)/.test(editor.settings.plugins) && PluginManager.get('powerpaste')) { // editor.settings.plugins not changed to editor.getParam due to being alien.
 
     if (typeof window.console !== 'undefined' && window.console.log) {
       window.console.log(`PowerPaste is incompatible with Paste plugin! Remove 'paste' from the 'plugins' option.`);

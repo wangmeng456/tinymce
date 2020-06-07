@@ -35,5 +35,5 @@ export {
   shouldRestoreWhenEmpty,
   getAutoSaveInterval,
   getAutoSaveRetention,
-  getForcedRootBlock,
+  getForcedRootBlock
 };

@@ -10,7 +10,7 @@ import { window } from '@ephox/dom-globals';
 
 const hasProPlugin = function (editor) {
   // draw back if power version is requested and registered
-  if (/(^|[ ,])tinymcespellchecker([, ]|$)/.test(editor.settings.plugins) && PluginManager.get('tinymcespellchecker')) { // editor.settings.plugins not changed to editor.getProps due to being alien.
+  if (/(^|[ ,])tinymcespellchecker([, ]|$)/.test(editor.settings.plugins) && PluginManager.get('tinymcespellchecker')) { // editor.settings.plugins not changed to editor.getParam due to being alien.
 
     if (typeof window.console !== 'undefined' && window.console.log) {
       window.console.log(

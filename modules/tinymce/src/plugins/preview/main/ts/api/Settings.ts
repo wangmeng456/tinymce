@@ -15,7 +15,7 @@ const getContentStyle = (editor: Editor): string => editor.getParam('content_sty
 const shouldUseContentCssCors = (editor: Editor): boolean => editor.getParam('content_css_cors', false, 'boolean');
 
 const getBodyClassByHash = (editor: Editor): string => {
-  const bodyClass = editor.getParam('body_class', '', 'string');
+  const bodyClass = editor.getParam('body_class', '', 'hash');
 
   return bodyClass[editor.id] || '';
 };
@@ -25,9 +25,9 @@ const getBodyClass = (editor: Editor): string => {
 
   if (bodyClass.indexOf('=') === -1) {
     return bodyClass;
+  } else {
+    return getBodyClassByHash(editor);
   }
-
-  return getBodyClassByHash(editor);
 };
 
 const getBodyIdByHash = (editor: Editor): string => {
@@ -40,9 +40,9 @@ const getBodyId = (editor: Editor): string => {
 
   if (bodyId.indexOf('=') === -1) {
     return bodyId;
+  } else {
+    return getBodyIdByHash(editor);
   }
-
-  return getBodyIdByHash(editor);
 };
 
 export {
@@ -51,5 +51,5 @@ export {
   getContentStyle,
   shouldUseContentCssCors,
   getBodyClass,
-  getBodyId,
+  getBodyId
 };

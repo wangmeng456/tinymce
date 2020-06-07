@@ -10,10 +10,9 @@ import PluginManager from 'tinymce/core/api/PluginManager';
 import * as Api from './api/Api';
 import * as Settings from './api/Settings';
 import * as Keyboard from './keyboard/Keyboard';
-import Editor from 'tinymce/core/api/Editor';
 
 export default function () {
-  PluginManager.add('textpattern', (editor: Editor) => {
+  PluginManager.add('textpattern', (editor) => {
     const patternsState = Cell(Settings.getPatternSet(editor));
 
     Keyboard.setup(editor, patternsState);

@@ -33,9 +33,9 @@ const getBodyClass = (editor: Editor) => {
 
   if (bodyClass.indexOf('=') === -1) {
     return bodyClass;
+  } else {
+    return getBodyClassFromHash(editor);
   }
-
-  return getBodyClassFromHash(editor);
 };
 
 export {
