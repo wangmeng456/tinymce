@@ -128,7 +128,7 @@ const parseDataUri = (uri: string) => {
 };
 
 const isValidDataUriImage = (editor: Editor, imgElm: HTMLImageElement) => {
-  const filter = Settings.getImagesDataimgFilter(editor);
+  const filter = Settings.getImagesDataImgFilter(editor);
   return filter ? filter(imgElm) : true;
 };
 

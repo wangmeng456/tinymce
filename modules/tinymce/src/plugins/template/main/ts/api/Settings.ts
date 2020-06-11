@@ -47,5 +47,5 @@ export {
   getTemplates,
   getCdateFormat,
   getMdateFormat,
-  getBodyClass,
+  getBodyClass
 };

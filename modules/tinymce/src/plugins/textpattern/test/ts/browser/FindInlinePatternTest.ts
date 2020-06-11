@@ -14,18 +14,15 @@ UnitTest.asynctest('textpattern.browser.FindInlinePatternTest', (success, failur
   Theme();
 
   const mockEditor = {
-    getParam: () => (
-      {
-        textpattern_patterns: [
-          { start: '*', end: '*', format: 'italic' },
-          { start: '**', end: '**', format: 'bold' },
-          { start: '***', end: '***', format: [ 'bold', 'italic' ] }, // due to priority this will never be used
-          { start: '', end: 'brb', cmd: 'mceInsertContent', value: 'be right back' },
-          { start: 'irl', end: '', cmd: 'mceInsertContent', value: 'in real life' },
-          { start: 'asap', replacement: 'as soon as possible' }
-        ]
-      }
-    )
+    getParam: () =>
+      [
+        { start: '*', end: '*', format: 'italic' },
+        { start: '**', end: '**', format: 'bold' },
+        { start: '***', end: '***', format: [ 'bold', 'italic' ] }, // due to priority this will never be used
+        { start: '', end: 'brb', cmd: 'mceInsertContent', value: 'be right back' },
+        { start: 'irl', end: '', cmd: 'mceInsertContent', value: 'in real life' },
+        { start: 'asap', replacement: 'as soon as possible' }
+      ]
   };
 
   const inlinePatterns = Settings.getPatternSet(mockEditor as any).inlinePatterns;

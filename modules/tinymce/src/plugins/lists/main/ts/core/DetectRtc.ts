@@ -7,10 +7,9 @@
 
 import Editor from 'tinymce/core/api/Editor';
 import PluginManager from 'tinymce/core/api/PluginManager';
-import * as Settings from '../api/Settings';
 
 export const hasRtcPlugin = (editor: Editor) => {
-  if (/(^|[ ,])rtc([, ]|$)/.test(Settings.getPlugins(editor)) && PluginManager.get('rtc')) {
+  if (/(^|[ ,])rtc([, ]|$)/.test(editor.getParam('plugins', '', 'string')) && PluginManager.get('rtc')) {
     return true;
   } else {
     return false;

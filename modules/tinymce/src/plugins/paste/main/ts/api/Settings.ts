@@ -51,7 +51,7 @@ const getAllowHtmlDataUrls = (editor: Editor): boolean => editor.getParam('allow
 
 const getPasteDataImages = (editor: Editor): boolean => editor.getParam('paste_data_images', false, 'boolean');
 
-const getImagesDataimgFilter = (editor: Editor) => editor.getParam('images_dataimg_filter');
+const getImagesDataImgFilter = (editor: Editor) => editor.getParam('images_dataimg_filter');
 
 const getImagesReuseFilename = (editor: Editor) => editor.getParam('images_reuse_filename');
 
@@ -77,7 +77,7 @@ export {
   getValidate,
   getAllowHtmlDataUrls,
   getPasteDataImages,
-  getImagesDataimgFilter,
+  getImagesDataImgFilter,
   getImagesReuseFilename,
   getForcedRootBlock,
   getForcedRootBlockAttrs
