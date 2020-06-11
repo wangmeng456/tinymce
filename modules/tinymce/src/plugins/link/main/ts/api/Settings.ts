@@ -42,8 +42,6 @@ const useQuickLink = (editor: Editor) => editor.getParam('link_quicklink', false
 
 const getDefaultLinkProtocol = (editor: Editor): string => editor.getParam('link_default_protocol', 'http', 'string');
 
-const getPlugins = (editor: Editor): string => editor.getParam('plugins', '', 'string');
-
 export {
   assumeExternalTargets,
   hasContextToolbar,
@@ -55,6 +53,5 @@ export {
   shouldShowLinkTitle,
   allowUnsafeLinkTarget,
   useQuickLink,
-  getDefaultLinkProtocol,
-  getPlugins
+  getDefaultLinkProtocol
 };

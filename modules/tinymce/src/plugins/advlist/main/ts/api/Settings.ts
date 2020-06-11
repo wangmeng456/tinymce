@@ -17,10 +17,7 @@ const getBulletStyles = (editor: Editor) => {
   return styles ? styles.split(/[ ,]/) : [];
 };
 
-const getPlugins = (editor: Editor) => editor.getParam('plugins', '');
-
 export {
   getNumberStyles,
-  getBulletStyles,
-  getPlugins
+  getBulletStyles
 };
